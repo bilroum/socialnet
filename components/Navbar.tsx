@@ -2,8 +2,14 @@ import { UsersRound } from "lucide-react";
 import Link from "next/link";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileNavbar from "./MobileNavbar";
+import { currentUser } from "@clerk/nextjs/server";
+import { syncUser } from "@/actions/user.action";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const user = await currentUser();
+
+  if (user) await syncUser();
+
   return (
     <nav className="sticky top-0 border-b backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4">
