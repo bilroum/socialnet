@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 
 import Sidebar from "@/components/Sidebar";
 import { Toaster } from "react-hot-toast";
-import { ThemeProvider } from "@/components/themeProvider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
